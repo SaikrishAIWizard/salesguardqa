@@ -1,0 +1,163 @@
+[
+  {
+    "id": "RECORDING_CONSENT",
+    "retailer": "Retailer 1",
+    "name": "Recording Consent",
+    "description": "Agent must disclose that the call is recorded.",
+    "check_type": "SCRIPT",
+    "critical": true,
+    "version": "2026-09-01",
+    "effective_from": "2026-09-01",
+    "effective_to": null,
+    "matching_config_json": {
+      "approved_variants": [
+        "this call is being recorded for quality purposes",
+        "we may monitor and record this call for quality and training purposes",
+        "for quality purposes we may monitor and record this call",
+        "this call may be recorded and monitored",
+        "this call is being recorded"
+      ]
+    }
+  },
+  {
+    "id": "ACCOUNT_HOLDER_CONFIRMED",
+    "retailer": "Retailer 1",
+    "name": "Account Holder Confirmed",
+    "description": "Agent confirms the customer is the account holder.",
+    "check_type": "SCRIPT",
+    "critical": true,
+    "version": "2026-09-01",
+    "effective_from": "2026-09-01",
+    "effective_to": null,
+    "matching_config_json": {
+      "approved_variants": [
+        "the account holder",
+        "confirm i am speaking with the account holder",
+        "am i speaking with the account holder"
+      ]
+    }
+  },
+  {
+    "id": "MARKET_OFFER_DISCLOSURE",
+    "retailer": "Retailer 1",
+    "name": "Market Offer Disclosure",
+    "description": "Agent reads the required market-offer / DMO disclosure.",
+    "check_type": "SCRIPT",
+    "critical": true,
+    "version": "2026-09-01",
+    "effective_from": "2026-09-01",
+    "effective_to": null,
+    "matching_config_json": {
+      "approved_variants": [
+        "market offer disclosure",
+        "i will now read the required market offer disclosure",
+        "this is a market offer",
+        "required market offer statement"
+      ]
+    }
+  },
+  {
+    "id": "TERMS_ACKNOWLEDGEMENT",
+    "retailer": "Retailer 1",
+    "name": "Terms Acknowledgement",
+    "description": "Agent asks whether the customer understands or accepts the key terms.",
+    "check_type": "SCRIPT",
+    "critical": true,
+    "version": "2026-09-01",
+    "effective_from": "2026-09-01",
+    "effective_to": null,
+    "matching_config_json": {
+      "approved_variants": [
+        "do you understand and accept these terms",
+        "do you accept the terms and conditions",
+        "are you happy to proceed on this basis",
+        "do you understand the key terms",
+        "are you okay to proceed with these terms"
+      ]
+    }
+  },
+  {
+    "id": "PEAK_RATE_MATCH",
+    "retailer": "Retailer 1",
+    "name": "Peak Rate Match",
+    "description": "Spoken peak rate matches the selected plan rate.",
+    "check_type": "FACTUAL",
+    "critical": true,
+    "version": "2026-09-01",
+    "effective_from": "2026-09-01",
+    "effective_to": null,
+    "matching_config_json": { "field": "peak_rate" }
+  },
+  {
+    "id": "OFF_PEAK_RATE_MATCH",
+    "retailer": "Retailer 1",
+    "name": "Off-Peak Rate Match",
+    "description": "Spoken off-peak rate matches the selected plan rate, when applicable.",
+    "check_type": "FACTUAL",
+    "critical": true,
+    "version": "2026-09-01",
+    "effective_from": "2026-09-01",
+    "effective_to": null,
+    "matching_config_json": { "field": "off_peak_rate" }
+  },
+  {
+    "id": "EMAIL_READBACK_MATCH",
+    "retailer": "Retailer 1",
+    "name": "Email Read-Back Match",
+    "description": "Spoken email read-back matches the CRM email.",
+    "check_type": "FACTUAL",
+    "critical": true,
+    "version": "2026-09-01",
+    "effective_from": "2026-09-01",
+    "effective_to": null,
+    "matching_config_json": { "field": "email" }
+  },
+  {
+    "id": "ADDRESS_MATCH",
+    "retailer": "Retailer 1",
+    "name": "Address Match",
+    "description": "Address spoken / confirmed matches the CRM address.",
+    "check_type": "FACTUAL",
+    "critical": true,
+    "version": "2026-09-01",
+    "effective_from": "2026-09-01",
+    "effective_to": null,
+    "matching_config_json": { "field": "address" }
+  },
+  {
+    "id": "PLAN_NAME_MATCH",
+    "retailer": "Retailer 1",
+    "name": "Plan Name Match",
+    "description": "Plan name stated by the agent matches the CRM-selected plan.",
+    "check_type": "FACTUAL",
+    "critical": true,
+    "version": "2026-09-01",
+    "effective_from": "2026-09-01",
+    "effective_to": null,
+    "matching_config_json": { "field": "plan_name" }
+  },
+  {
+    "id": "DEAD_AIR",
+    "retailer": "Retailer 1",
+    "name": "Dead Air",
+    "description": "Flag gaps longer than 30 seconds as a coaching note.",
+    "check_type": "BEHAVIOUR",
+    "critical": false,
+    "version": "2026-09-01",
+    "effective_from": "2026-09-01",
+    "effective_to": null,
+    "matching_config_json": { "type": "dead_air", "threshold_seconds": 30 }
+  },
+  {
+    "id": "CROSSTALK_OR_LOW_CONFIDENCE",
+    "retailer": "Retailer 1",
+    "name": "Crosstalk or Low Confidence",
+    "description": "Flag overlapping speech, unknown speaker, or transcript confidence below 0.80 as a QA/coaching signal.",
+    "check_type": "BEHAVIOUR",
+    "critical": false,
+    "version": "2026-09-01",
+    "effective_from": "2026-09-01",
+    "effective_to": null,
+    "matching_config_json": { "type": "crosstalk_low_confidence", "confidence_threshold": 0.80 }
+  }
+]
